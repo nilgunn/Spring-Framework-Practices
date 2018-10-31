@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
+
+
+	<bean id="beanpers" class="paket.Personel">
+		<property name="adi" value="Metin"></property>
+		<property name="soyadi" value="Tekin"></property>
+		<property name="tecrube" value="3"></property>
+	</bean>
+	<!-- 
+	<bean id="beanonce" class="aop.MetotCagiriOncesiYapilacaklar"></bean>
+	<bean id="beansonra" class="aop.MetotCagiriSonrasiYapilacaklar"></bean>
+	<bean id="beanistisna" class="aop.MetotCagiriIstisnaSonrasiYapilacaklar"></bean> -->
+	<bean id="beanozellik" class="aop.Ozellikler"></bean>
+	
+	<bean id = "basitBirPointcutBean" class = "org.springframework.aop.support.NameMatchMethodPointcut">
+	<property name="mappedName" value = "selamver"></property>
+	</bean>
+	
+	<bean id = "basitBirAdvisorBean" class = "org.springframework.aop.support.DefaultPointcutAdvisor">
+	<property name="pointcut" ref = "basitBirPointcutBean"></property>
+	<property name="advice" ref = "beanozellik"></property>
+	</bean>
+	
+	<bean id="beanpersproxy"
+		class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="target" ref="beanpers"></property>
+		<property name="interceptorNames">
+		<list>
+		<!-- <value>beanonce</value>
+		<value>beansonra</value>
+		<value>beanistisna</value>
+		<value>beanozellik</value>-->
+		<value>basitBirAdvisorBean</value>
+		</list>
+		</property>
+		
+	</bean>
+	
+</beans>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd">
+
+	<bean id="beanogrenci" class="paket.Ogrenci">
+		<property name="adi" value="Orkun"></property>
+		<property name="soyadi" value="Yener"></property>
+		<property name="bolumu" value="Bilgisayar Mühendisliği"></property>
+		<property name="yasi" value="21"></property>
+	</bean>
+	
+	
+	<bean id="beankoleksiyonlar" class="paket.Koleksiyonlar">
+		
+		<property name="lists">
+		<list>
+		<value>285</value>
+		<ref bean = "beanogrenci"/>
+		</list>
+		</property>
+		
+		<property name="sets">
+		<list>
+		<value>432</value>
+		<ref bean = "beanogrenci"/>
+		</list>
+		</property>
+		
+		<property name="maps">
+		<map>
+		<entry key = "Geometri" value = "Selin Uğur"></entry>
+		<entry key = "Kimya" value-ref = "beanogrenci"></entry>
+		<entry key = "FB">
+		<bean class="paket.Ogrenci">
+		<property name="adi" value="Orkun"></property>
+		<property name="soyadi" value="Yener"></property>
+		<property name="bolumu" value="Bilgisayar Mühendisliği"></property>
+		<property name="yasi" value="21"></property>
+	    </bean>
+		
+		</entry>
+		</map>
+		</property>
+		
+		<property name="props">
+		<props>
+		
+		<prop key="Türkçe">Mehmet Aslan</prop>
+		<prop key="Matematik">Mert Serap</prop>
+		<prop key="Geometri">Sinem Yeşil</prop>
+		<prop key="Fizik">Seray Ak</prop>
+		</props>
+		</property>
+		
+	</bean>
+	
+</beans>

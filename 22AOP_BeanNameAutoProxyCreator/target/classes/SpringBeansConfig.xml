@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
+
+
+	<bean id="personelServisBean" class="paket.Personel">
+		<property name="adi" value="Zeynep"></property>
+		<property name="soyadi" value="Tunç"></property>
+		<property name="tecrube" value="5"></property>
+	</bean>
+	
+	
+	<bean id="beanozellik" class="aop.Ozellikler"></bean>
+	
+	
+
+	
+	<bean id = "basitBirPointcutBean" class = "org.springframework.aop.support.NameMatchMethodPointcut">
+	<property name="mappedName" value = "selamver"></property>
+	</bean>
+	
+	<bean id = "basitBirAdvisorBean" class = "org.springframework.aop.support.NameMatchMethodPointcutAdvisor">
+	<property name="mappedName" value = "selamver"></property>
+	<property name="advice" ref = "beanozellik"></property>
+	</bean>
+	
+	<bean id="personelServisBeanProxy"
+		class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+		<property name="beanNames">
+		<list>
+		<value>personelServisBean</value>
+		</list>
+		</property>
+		
+		<property name="interceptorNames">
+		<list>
+		<value>basitBirAdvisorBean</value>
+		</list>
+		</property>
+		
+	</bean>
+	
+</beans>

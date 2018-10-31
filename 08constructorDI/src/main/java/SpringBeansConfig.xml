@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+
+	<bean id="beana" class="paket.A"
+	p:x="22">
+	</bean>
+	<bean id="beanb" class="paket.B" scope="singleton"
+		lazy-init="true">
+		<constructor-arg ref="beana"></constructor-arg>
+	</bean>
+	
+	<bean id="beanc" class="paket.C">
+		<constructor-arg type="int" value="14"></constructor-arg>
+		<constructor-arg type="java.lang.String" value="s"></constructor-arg>
+	</bean>
+</beans>

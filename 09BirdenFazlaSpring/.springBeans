@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beansProjectDescription>
+	<version>1</version>
+	<pluginVersion><![CDATA[3.9.4.201804120850-RELEASE]]></pluginVersion>
+	<configSuffixes>
+		<configSuffix><![CDATA[xml]]></configSuffix>
+	</configSuffixes>
+	<enableImports><![CDATA[false]]></enableImports>
+	<configs>
+		<config>src/main/resources/alis/SpringAlis.xml</config>
+		<config>src/main/resources/musteri/SpringMusteri.xml</config>
+		<config>src/main/resources/satis/SpringSatis.xml</config>
+		<config>src/main/resources/veritabani/SpringBaglanti.xml</config>
+		<config>src/main/resources/yonetim/haklar/SpringHaklar.xml</config>
+		<config>src/main/resources/yonetim/SpringYonetim.xml</config>
+		<config>src/main/resources/SpringBeansTumModuller.xml</config>
+		<config>src/main/java/paket/SpringAdres.xml</config>
+	</configs>
+	<autoconfigs>
+	</autoconfigs>
+	<configSets>
+	</configSets>
+</beansProjectDescription>

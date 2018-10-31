@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+
+	<bean id="beankitap" class="paket.Kitap">
+		<property name="eseradi" value="Java Programming"></property>
+		<property name="eserISBN" value="786786996457"></property>
+	</bean>
+	
+	<bean id="beanyazar" class="paket.Yazar">
+		<property name="adi" value="Can"></property>
+		<property name="soyadi" value="Solmaz"></property>
+		<property name="kitap" value = "#{beankitap}"></property>
+		<property name="kitapadi" value = "#{beankitap.eseradi}"></property>
+	</bean>
+</beans>

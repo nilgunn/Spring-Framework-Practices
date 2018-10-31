@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd">
+
+
+	<bean id="beanogrenci" class="paket.Ogrenci">
+	
+	<property name = "ogrencilist">
+	<list>
+	<value>Beril Yılmaz</value>
+	<value>Onur Ay</value>
+	<value>Kadir Say</value>
+	<value>Derin Kara</value>
+	</list>
+	</property>
+	
+	<property name="ogrenciset">
+	<set>
+	<value>Beril Yılmaz</value>
+	<value>Onur Ay</value>
+	<value>Kadir Say</value>
+	<value>Derin Kara</value>
+	</set>
+	</property>
+	
+	<property name = "ogrencimap">
+	<map>
+	<entry key = "1" value = "Beril Yılmaz"></entry>
+	<entry key = "2" value = "Onur Ay"></entry>
+	<entry key = "3" value = "Kadir Say"></entry>
+	<entry key = "1" value = "Derin Kara"></entry>
+	</map>
+	</property>
+	
+	<property name="ogrenciprop">
+	<props>
+	<prop key="neşeli">Beril Yılmaz</prop>
+	<prop key="şımarık">Onur Ay</prop>
+	<prop key="zeki">Kadir Say</prop>
+	<prop key="komik">Derin Kara</prop>
+	</props>
+	</property>
+	</bean>
+</beans>

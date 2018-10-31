@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+	<bean id="beanogrenci" class="paket.Ogrenci"
+		p:adi="Pelin"
+		p:soyadı ="Işık"
+		p:numarasi="2566"
+		p:üniversite-ref="beanokul"
+		>
+	</bean>
+	
+	<!--  <bean id="beanogrenci" class="paket.Ogrenci"> 
+		<property name="adi" value="Pelin"></property>
+		<property name="soyadı" value="Işık"></property>
+		<property name="numarasi" value="2566"></property> 
+		
+	</bean>
+	-->
+	
+	<bean id="beanokul" class="paket.Okul"
+	p:okuladi="Boğaziçi Üniversitesi">
+	</bean>
+</beans>

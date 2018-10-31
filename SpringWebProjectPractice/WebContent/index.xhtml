@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head></h:head>
+<body>
+	<rich:panel>
+		<f:facet name="header">
+			<h1>Kırmızı Tema!</h1>
+			
+			<h:commandButton action="personel/listele?faces-redirect = true"
+				value="Listele" />
+			<h:commandButton action="personel/ara?faces-redirect = true"
+				value=" Ara " />
+			<h:commandButton action="personel/ekle?faces-redirect = true"
+				value=" Ekle " />
+			<h:commandButton action="personel/listele?faces-redirect = true"
+				value=" Düzenle " />
+			<h:commandButton action="personel/listele?faces-redirect = true"
+				value=" Sil " />
+		</f:facet>
+		<h:outputText value="Panel Body" />
+	</rich:panel>
+</body>
+</html>
